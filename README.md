@@ -16,6 +16,14 @@ System dependencies
 Database creation
  - run rake db:populate
 
+Create token
+	Run the following command to create access token
+
+		config = YAML.load_file(File.join(Rails.root, 'config/secrets.yml'))[Rails.env]
+		payload = {token: config['auth_token'], expires_at: (Time.now + 24.hour).to_i}
+		JWT.encode(payload, config['secret_key_base'])
+
+
 Deployment instructions
 ...
 
