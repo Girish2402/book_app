@@ -14,7 +14,7 @@ System dependencies
 
 
 Database creation
- - run rake db:populate
+ - run rake db:seed
 
 Run the following command to create access token
 
